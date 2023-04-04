@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Calculator salaries</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: #ececec;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div>
+        <h1>Kalkulator Wynagrodzeń</h1>
+        <p>Wpisz Kwotę</p>
+        <input aria-label="input-number" type="number" class="input-number" id="price">
+    </div>
+    <div class="inputs-checkbox">
+        <div class="input-checkbox">
+            <span>Brutto</span>
+            <input aria-label="input-checkbox" type="radio" id="brutto" name="type" checked>
+        </div>
+        <div class="input-checkbox">
+            <span>Netto(na rękę)</span>
+            <input aria-label="input-checkbox" type="radio" id="netto" name="type">
+        </div>
+    </div>
+    <button id="calculate" class="button"><span>Oblicz</span></button>
+</div>
+<div class="container">
+    <h1>Umowa o pracę</h1>
+    <p id="salary"></p>
+    <p id="zus"></p>
+    <p id="healthCare"></p>
+    <p id="incomeTax"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
