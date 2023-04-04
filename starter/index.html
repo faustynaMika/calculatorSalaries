@@ -9,9 +9,17 @@
     <style>
         body {
             height: 100vh;
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
             align-items: center;
             background: #ececec;
+        }
+        @media only screen and (max-width: 600px) {
+            body {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
         }
     </style>
 </head>
@@ -20,27 +28,24 @@
     <div>
         <h1>Kalkulator Wynagrodzeń</h1>
         <p>Wpisz Kwotę</p>
-        <input aria-label="input-number" type="number" class="input-number" id="price">
+        <input aria-label="input-number" type="number" class="input-number" id="price" value="4000">
     </div>
-    <div class="inputs-checkbox">
-        <div class="input-checkbox">
-            <span>Brutto</span>
-            <input aria-label="input-checkbox" type="radio" id="brutto" name="type" checked>
-        </div>
-        <div class="input-checkbox">
-            <span>Netto(na rękę)</span>
-            <input aria-label="input-checkbox" type="radio" id="netto" name="type">
-        </div>
+    <div class="button_">
+        <button id="calculate" class="button"><span>Oblicz</span></button>
     </div>
-    <button id="calculate" class="button"><span>Oblicz</span></button>
 </div>
 <div class="container">
     <h1>Umowa o pracę</h1>
-    <p id="salary"></p>
-    <p id="zus"></p>
-    <p id="healthCare"></p>
-    <p id="incomeTax"></p>
+    <p>Kwota Netto: <span id="salary"></span> <span>zł</span></p>
+    <p>Ubezpieczenie Emerytalne: <span id="zus"></span> <span>zł</span></p>
+    <p>Ubezpieczenie Zdrowotne: <span id="healthCare"></span> <span>zł</span></p>
+    <p>Zaliczka Na Podatek: <span id="incomeTax"></span> <span>zł</span></p>
 </div>
+<div>
+    <canvas id="myChart"></canvas>
+</div>
+
+<script class="chart" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
